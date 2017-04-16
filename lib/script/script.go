@@ -9,8 +9,7 @@ import (
 
 	"github.com/Originate/git-town/lib/git"
 	"github.com/Originate/git-town/lib/util"
-
-	"github.com/fatih/color"
+	c "github.com/logrusorgru/aurora"
 )
 
 // OpenBrowser opens the default browser with the given URL.
@@ -38,7 +37,7 @@ func PrintCommand(cmd ...string) {
 		header = fmt.Sprintf("[%s] %s", git.GetCurrentBranchName(), header)
 	}
 	fmt.Println()
-	color.New(color.Bold).Println(header)
+	fmt.Println(c.Bold(header))
 }
 
 // RunCommand executes the given command-line operation.

@@ -9,7 +9,7 @@ import (
 
 	"github.com/Originate/git-town/lib/git"
 	"github.com/Originate/git-town/lib/util"
-	"github.com/fatih/color"
+	c "github.com/logrusorgru/aurora"
 )
 
 // GetSquashCommitAuthor gets the author of the supplied branch.
@@ -86,9 +86,8 @@ func parseAuthorNumber(userInput string, authors []branchAuthor) string {
 }
 
 func printNumberedAuthors(authors []branchAuthor) {
-	boldFmt := color.New(color.Bold)
 	for index, author := range authors {
 		stat := util.Pluralize(author.NumberOfCommits, "commit")
-		fmt.Printf("  %s: %s (%s)\n", boldFmt.Sprintf("%d", index+1), author.NameAndEmail, stat)
+		fmt.Printf("  %d: %s (%s)\n", c.Bold(index+1), author.NameAndEmail, stat)
 	}
 }

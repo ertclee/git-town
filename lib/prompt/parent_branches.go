@@ -8,7 +8,7 @@ import (
 
 	"github.com/Originate/git-town/lib/git"
 	"github.com/Originate/git-town/lib/util"
-	"github.com/fatih/color"
+	c "github.com/logrusorgru/aurora"
 )
 
 // EnsureKnowsParentBranches asserts that the entire ancestry for all given branches
@@ -110,10 +110,9 @@ func parseParentBranchNumber(userInput string) string {
 }
 
 func printNumberedBranches() {
-	boldFmt := color.New(color.Bold)
 	branches := git.GetLocalBranchesWithMainBranchFirst()
 	for index, branchName := range branches {
-		fmt.Printf("  %s: %s\n", boldFmt.Sprintf("%d", index+1), branchName)
+		fmt.Printf("  %d: %s\n", c.Bold(index+1), branchName)
 	}
 }
 
@@ -127,6 +126,6 @@ func printParentBranchHeader() {
 }
 
 func printParentBranchPrompt(branchName string) {
-	coloredBranchName := color.New(color.Bold).Add(color.FgCyan).Sprintf(branchName)
+	coloredBranchName := c.Bold(c.Cyan(branchName))
 	fmt.Printf(parentBranchPromptTemplate, coloredBranchName, git.GetMainBranch())
 }

@@ -1,29 +1,16 @@
-hash: ca6ba92bb43a8244f31c3479c3c282da126d1840448949370cff5d47c19e0443
-updated: 2017-04-16T09:07:05.465374892-07:00
+hash: e07d13ec3f3c7b279bca2b1e7efe6e43bd9b923d32ce01e1705c6f8fb7891ec4
+updated: 2017-04-16T09:24:16.105563226-07:00
 imports:
-- name: github.com/fatih/color
-  version: 7824417a424b65227be8ac9b14d545a7f3e6c3f0
 - name: github.com/inconshreveable/mousetrap
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/logrusorgru/aurora
   version: e669f2c22bc605420e0a2f759ec43ea235ba02d2
-- name: github.com/mattn/go-colorable
-  version: 5411d3eea5978e6cdc258b30de592b60df6aba96
-  repo: https://github.com/mattn/go-colorable
-- name: github.com/mattn/go-isatty
-  version: dda3de49cbfcec471bd7a70e6cc01fcc3ff90109
-  repo: https://github.com/mattn/go-isatty
 - name: github.com/spf13/cobra
   version: 92ea23a837e66f46ac9e7d04fa826602b7b0a42d
 - name: github.com/spf13/pflag
   version: 9ff6c6923cfffbcd502984b8e0c80539a94968b7
 - name: github.com/spf13/viper
   version: 7538d73b4eb9511d85a9f1dfef202eeb8ac260f4
-- name: golang.org/x/sys
-  version: e24f485414aeafb646f6fca458b0bf869c0880a1
-  repo: https://go.googlesource.com/sys
-  subpackages:
-  - unix
 testImports:
 - name: github.com/onsi/ginkgo
   version: f40a49d81e5c12e90400620b6242fb29a8e7c9d9

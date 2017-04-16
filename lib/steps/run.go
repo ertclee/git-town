@@ -6,8 +6,7 @@ import (
 
 	"github.com/Originate/git-town/lib/git"
 	"github.com/Originate/git-town/lib/util"
-
-	"github.com/fatih/color"
+	c "github.com/logrusorgru/aurora"
 )
 
 // RunOptions bundles the parameters for running a Git Town command.
@@ -99,14 +98,13 @@ func runSteps(runState *RunState, options RunOptions) {
 }
 
 func exitWithMessages(command string, skipMessage string) {
-	messageFmt := color.New(color.FgRed)
 	fmt.Println()
-	messageFmt.Printf("To abort, run \"gt %s --abort\".", command)
+	c.Sprintf(c.Red("To abort, run \"gt %s --abort\"."), command)
 	fmt.Println()
-	messageFmt.Printf("To continue after you have resolved the conflicts, run \"gt %s --continue\".", command)
+	c.Sprintf(c.Red("To continue after you have resolved the conflicts, run \"gt %s --continue\"."), command)
 	fmt.Println()
 	if skipMessage != "" {
-		messageFmt.Printf("To skip %s, run \"gt %s --skip\".", skipMessage, command)
+		c.Sprintf(c.Red("To skip %s, run \"gt %s --skip\"."), skipMessage, command)
 		fmt.Println()
 	}
 	fmt.Println()
