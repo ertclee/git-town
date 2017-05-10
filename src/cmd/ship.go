@@ -69,6 +69,7 @@ func checkShipPreconditions(args []string) (result shipConfig) {
 func ensureParentBranchIsMainBranch(branchName string) {
 	if git.GetParentBranch(branchName) != git.GetMainBranch() {
 		ancestors := git.GetAncestorBranches(branchName)
+		fmt.Println(ancestors)
 		ancestorsWithoutMain := ancestors[1:]
 		fmt.Println(ancestorsWithoutMain)
 		oldestAncestor := ancestorsWithoutMain[0]
