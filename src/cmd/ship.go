@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/Originate/git-town/src/git"
@@ -69,6 +70,7 @@ func ensureParentBranchIsMainBranch(branchName string) {
 	if git.GetParentBranch(branchName) != git.GetMainBranch() {
 		ancestors := git.GetAncestorBranches(branchName)
 		ancestorsWithoutMain := ancestors[1:]
+		fmt.Println(ancestorsWithoutMain)
 		oldestAncestor := ancestorsWithoutMain[0]
 		util.ExitWithErrorMessage(
 			"Shipping this branch would ship "+strings.Join(ancestorsWithoutMain, ", ")+" as well.",
